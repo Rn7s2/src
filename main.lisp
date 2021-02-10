@@ -1,4 +1,10 @@
-(defun f (x)
-  (format t x "~A"))
+(let ((p '(0 0 0 0 0 0)))
+  (defun f (x)
+    (if (>= x 6)
+	(format t "~A~%" p)
+	(do ((i 0 (+ i 1)))
+	    ((>= i 3) t)
+	  (setf (nth x p) (+ i 1))
+	  (f (+ x 1))))))
 
-(f "Hello, world!")
+(f 0)
