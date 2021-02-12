@@ -1,0 +1,17 @@
+(defparameter *p* '(0 0 0 0 0))
+(defparameter *vis* '(nil nil nil nil nil nil nil))
+
+(defun f (x)
+  (if (>= x 3)
+      (format t "~A~%" *p*)
+      (dotimes (i 7 t)
+	(if (equal (nth i *vis*) t)
+	    (go end))
+	(setf (nth i *vis*) t)
+	(setf (nth x *p*) i)
+	(incf (nth x *p*) 1)
+	(f (+ x 1))
+	(setf (nth i *vis*) nil)
+	end)))
+
+(f 0)

@@ -1,4 +1,4 @@
-(let* ((n 10000000)
+(let* ((n (read))
        (prime (make-array (+ n 1) :fill-pointer 0))
        (is-prime (make-array (+ n 1) :initial-element t)))
   (setf (aref is-prime 0) nil)
