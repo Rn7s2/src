@@ -1,5 +1,3 @@
-#!/usr/bin/sbcl --script
-
 (defun get-prime-num (n)
   (let* ((prime (make-array (+ n 1) :fill-pointer 0))
 	 (is-prime (make-array (+ n 1) :initial-element t)))

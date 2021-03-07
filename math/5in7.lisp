@@ -1,4 +1,5 @@
-;; 英语七选五，胡蒙全错的概率
+;; See 5in7.java
+;; This do the same thing, but written in Common Lisp.
 
 (let ((p '(0 0 0 0 0))
       (vis '(nil nil nil nil nil nil nil))
@@ -22,5 +23,5 @@
 
   (dfs 0)
   (dotimes (i 6)
-    (format t "蒙对~A道题的情况数：~A~%" i (nth i cnt)))
-  (format t "总情况数：~A~%" (* 7 6 5 4 3)))
+    (format t "~A matching: ~A~%" i (nth i cnt)))
+  (format t "Total: ~A~%" (* 7 6 5 4 3)))

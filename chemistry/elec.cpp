@@ -1,4 +1,4 @@
-// 根据构造原理推出原子核外电子排布（不处理半满、全满问题等例外情况）
+// Calculates electrons outside the core of an atom.
 
 #include <iostream>
 #include <vector>
@@ -6,13 +6,13 @@
 
 using namespace std;
 
-// 直接由构造原理推出的能级顺序
+// pre-defined 'constuction principle'
 const string p = "sspspsdpsdpsfdpsfdpfdf";
 const char   dfn[4] = { 's', 'p', 'd', 'f' };
 int          cnt[4] = { 0, 1, 2, 3 };
 
 
-// 定义能级的数据结构，方便排序
+// to make sorting easier, define a struct
 struct EnergyStage {
     int idx;
     int stg;
@@ -41,11 +41,11 @@ vector<EnergyStage> v;
 int main()
 {
     int n, tmp, bak;
-    // 输入原子序数
+    // input the atomic number
     cin >> n;
     bak = n;
 
-    // 按照构造原理，逐能级排电子
+    // push electrons into each energy stage
     for (int i = 0; i < p.size() && n > 0; ++i) {
 	switch (p[i]) {
 	case 's':
@@ -69,18 +69,15 @@ int main()
 	    v.push_back(EnergyStage(++cnt[3], 3, tmp));
 	}
     }
-
-    // 按照能级先后排序
+    
     sort(v.begin(), v.end());
 
-    // 输出核外电子排布式
     for (int i = 0; i < v.size(); i++) {
 	v[i].print();
 	cout << ' ';
     }
     cout << endl << "(+" << bak << ") ";
 
-    // 输出各能层电子数
     int lst = 0, cur = 0, sum = 0;
     for (int i = 0; i < v.size(); i++) {
 	cur = v[i].idx;

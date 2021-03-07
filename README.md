@@ -1,7 +1,7 @@
 # src
 
-#### 介绍
-小程序集。
+#### Introduction
+Small programs.
 
-#### 授权
-没有特殊说明都为WTFPL.
+#### License
+Mostly WTFPL. Some have their own licenses.

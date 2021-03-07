@@ -1,4 +1,9 @@
-// 英语七选五，胡蒙全错的概率
+// In English exams, there's several kinds of questions.
+// Assume that you are given an article, and you need to choose 5
+// from 7 given sentences to complete the article.
+// But you decide to have a wide shot.
+// You choose 5 sentences randomly and write them down.
+// So will you get the marks?
 
 public class Main {
     static boolean[] vis = new boolean[7];
@@ -29,9 +34,8 @@ public class Main {
         int tmp = 0;
         for (int i = 0; i <= 5; i++) {
             tmp += cnt[i];
-            System.out.print("蒙对" + i + "题的情况数：");
-            System.out.println(cnt[i]);
+            System.out.print(i + " matching: " + cnt[i] + "\n");
         }
-        System.out.println("总情况数：" + tmp);
+        System.out.println("Total: " + tmp + "\n");
     }
 }
