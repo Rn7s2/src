@@ -1,7 +1,6 @@
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
-(package-initialize)
+(setq package-archives '(("gnu"   . "http://cmcc.mirrors.ustc.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://cmcc.mirrors.ustc.edu.cn/elpa/melpa/")
+			 ("melpa-stable" . "http://cmcc.mirrors.ustc.edu.cn/elpa/melpa-stable/")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -21,16 +20,14 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; Lisp
-(load (expand-file-name "~/.quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl")
+;; Tab 4
+(setq-default indent-tabs-mode nil)
+(setq c-basic-offset 4)
+(setq c-default-style "linux")
+(setq default-tab-width 4)
 
 ;; Full screen
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 
 ;; Backups goto ~/.backups
 (setq backup-directory-alist (quote (("." . "~/.emacs_backups"))))
-
-;; Markdown
-(setq markdown-command "pandoc")
-(add-hook 'markdown-mode-hook (lambda () (setq markdown-enable-math t)))
