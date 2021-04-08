@@ -1,6 +1,6 @@
 #lang racket
 
-(let* ((n (read))
+(let* ((n 10000)
        (cnt 0)
        (prime (make-vector n 0))
        (is-prime (make-vector n #t)))
